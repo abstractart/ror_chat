@@ -34,10 +34,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'byebug', platform: :mri
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'pry-doc'
+  gem 'awesome_print'
+  
   gem 'capybara', '~> 2.13'
+  gem 'factory_girl_rails'  
+  gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver'
 end
 
@@ -48,7 +55,42 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  ## Linters
+  gem 'rubocop', require: false
+  gem 'bullet'
+
+  gem 'bundler-audit'
+  gem 'brakeman', require: false
+
+  gem 'stackprof'
+  gem 'flamegraph'
+  gem 'rack-mini-profiler', require: false
 end
+
+group :test do
+  gem 'spring-commands-rspec', '~> 1.0'
+  gem 'guard'
+  gem 'guard-bundler', require: false
+  gem 'guard-brakeman'
+  gem 'guard-rspec'
+  gem 'rb-inotify', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-fchange', require: false
+  gem 'terminal-notifier-guard'
+
+  gem 'simplecov', require: false
+
+  gem 'database_cleaner'
+
+  gem 'shoulda-matchers',          '~> 3.1'
+  gem 'shoulda-callback-matchers', '~> 1.1'
+
+  gem 'ffaker'
+  gem 'timecop'
+  gem 'json-schema'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
