@@ -36,7 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # Authentication
 gem 'devise'
 
+#OAuth Facebook provider
+gem 'omniauth-facebook', '~> 4.0.0'
+
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'
   gem 'byebug', platform: :mri
