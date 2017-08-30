@@ -8,4 +8,8 @@ describe User, type: :model do
     it { should validate_presence_of(:last_name) }
     it { should validate_length_of(:last_name).is_at_most(64) }
   end
+
+  context 'associations' do
+    it { should have_many(:comments) }
+  end
 end
