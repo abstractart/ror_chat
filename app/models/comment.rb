@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :user
-  validates :text,  presence: :true, length: { maximum: 512 }
+  validates :text, presence: :true, length: { maximum: 512 }
 end
