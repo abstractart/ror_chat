@@ -12,7 +12,7 @@
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../" class="navbar-brand">RoR Chat</a>
+          <%= link_to "RoR Chat", root_path, class: "navbar-brand"%>
           <ul class="nav navbar-nav">
           <% if user_signed_in? %>
             <li>
