@@ -41,6 +41,8 @@ gem 'omniauth-facebook', '~> 4.0.0'
 gem 'slim-rails'
 gem 'simple_form'
 
+gem 'record_tag_helper', '~> 1.0'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'

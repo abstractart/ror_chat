@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :set_comment, only: [:destroy]
   respond_to :html
   respond_to :js
   
@@ -19,8 +19,17 @@ class CommentsController < ApplicationController
     respond_with(@comment)
   end
 
+
+  def destroy
+    @comment.destroy
+    respond_with(@comment)
+  end
+  
   private 
 
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
   def comment_params
     params.require(:comment).permit(:text)
   end

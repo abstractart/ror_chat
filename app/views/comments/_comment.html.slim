@@ -1,7 +1,8 @@
-.comment
+= div_for comment
   .panel.panel-default
     .panel-heading
       h3.panel-title
         = comment.user.full_name
+        = link_to '&times;'.html_safe, comment, remote: true, method: :delete, class: 'comment-action comment-delete'
     .panel-body
       = simple_format comment.text
