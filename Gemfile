@@ -42,6 +42,7 @@ gem 'kaminari'
 gem 'local_time'
 # OAuth Facebook provider
 gem 'omniauth-facebook', '~> 4.0.0'
+gem "pundit"
 gem 'record_tag_helper', '~> 1.0'
 gem 'simple_form'
 gem 'slim-rails'

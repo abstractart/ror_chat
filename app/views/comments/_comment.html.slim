@@ -3,8 +3,10 @@
     .panel-heading
       h3.panel-title
         = comment.user.full_name
-        = link_to '&times;'.html_safe, comment, remote: true, method: :delete, class: 'comment-action comment-delete'
-        = link_to '&#x270f;'.html_safe, edit_comment_path(comment), remote: true, class: 'comment-action comment-edit'
+        - if policy(comment).destroy?
+          = link_to '&times;'.html_safe, comment, remote: true, method: :delete, class: 'comment-action comment-delete'
+        - if policy(comment).update?
+          = link_to '&#x270f;'.html_safe, edit_comment_path(comment), remote: true, class: 'comment-action comment-edit'
     .panel-body
       = simple_format comment.text
     .panel-footer
