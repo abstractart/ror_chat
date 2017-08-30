@@ -38,6 +38,8 @@ gem 'devise'
 
 #OAuth Facebook provider
 gem 'omniauth-facebook', '~> 4.0.0'
+gem 'slim-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'dotenv-rails'
