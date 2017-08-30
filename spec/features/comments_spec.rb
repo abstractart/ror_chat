@@ -21,7 +21,7 @@ describe 'creating comment', type: :feature do
     it 'works well', js: true do
       text = 'My Simple text'
       visit '/'
-      click_link 'Add Comment'
+      click_link '+'
       within("#new_comment") do
         fill_in 'Text', with: text
       end
@@ -41,5 +41,19 @@ describe 'creating comment', type: :feature do
   end
 
   context 'edit_comment' do
+    before(:each) do
+      user.comments << Comment.new(text: FFaker::Lorem.characters(128))
+    end
+
+    it 'edit well', js: true do
+      new_text = FFaker::Lorem.characters(256)
+      visit '/'
+      click_link '✏'
+      within(".edit_comment") do
+        fill_in 'Text', with: new_text
+      end
+      click_button 'Update Comment'
+      expect(page).to have_content new_text
+    end
   end
 end

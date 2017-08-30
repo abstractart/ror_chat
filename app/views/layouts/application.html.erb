@@ -14,11 +14,6 @@
         <div class="navbar-header">
           <a href="../" class="navbar-brand">RoR Chat</a>
           <ul class="nav navbar-nav">
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to 'Add Comment', new_comment_path, remote: true, class: 'new-comment' %>
-              </li>
-            <% end %>
           </ul>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
