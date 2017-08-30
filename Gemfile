@@ -43,7 +43,8 @@ gem 'simple_form'
 
 gem 'record_tag_helper', '~> 1.0'
 gem 'local_time'
-
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'

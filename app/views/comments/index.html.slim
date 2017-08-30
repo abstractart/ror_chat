@@ -3,3 +3,6 @@
   = link_to '&#x2b;'.html_safe, new_comment_path, remote: true, class: 'new-comment'
 .comments
   = render @comments
+
+.pages
+  = paginate @comments, theme: 'twitter-bootstrap-3'

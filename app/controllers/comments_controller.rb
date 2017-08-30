@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   respond_to :js
   
   def index
-    @comments = Comment.all.includes(:user)
+    @comments = Comment.all.order(created_at: :desc).page(params[:page]).includes(:user)
     respond_with(@comments)
   end
 
