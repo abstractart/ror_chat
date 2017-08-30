@@ -9,7 +9,29 @@
   </head>
 
   <body>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">RoR Chat</a>
+          <ul class="nav navbar-nav">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to 'Add Comment', new_comment_path %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <%= render 'devise/menu/registration' %>
+            <%= render 'devise/menu/login' %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
