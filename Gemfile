@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-kaminari-views'
 # Authentication
 gem 'devise'
+
+gem 'ffaker'
+
 # Pagination
 gem 'kaminari'
 # Time helper fow views
@@ -54,7 +57,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-doc'
