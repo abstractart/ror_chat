@@ -1,5 +1,9 @@
 {
   "name": "chat_ror_react",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "jquery-ujs": "^1.2.2"
+  }
 }

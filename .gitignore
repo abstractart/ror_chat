@@ -12,7 +12,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
-
+/node_modules/
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
 .env
