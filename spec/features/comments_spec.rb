@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'creating comment', type: :feature do
-  let(:user) { user = User.create!(email: 'user@example.com', password: 'password', first_name: 'First', last_name: "Last") }
+describe 'Comments', type: :feature do
+  let(:user) { User.create!(email: 'user@example.com', password: 'password', first_name: 'First', last_name: 'Last') }
   
   before(:each) do
     login_as(user, scope: :user)
@@ -11,7 +11,7 @@ describe 'creating comment', type: :feature do
     before(:each) do
       user.comments << Comment.new(text: FFaker::Lorem.characters(128))
     end
-    it "shows all comments" do
+    it 'shows all comments' do
       visit '/'
       expect(page).to have_css('.comment', count: 1)
     end
@@ -22,7 +22,7 @@ describe 'creating comment', type: :feature do
       text = 'My Simple text'
       visit '/'
       click_link '+'
-      within("#new_comment") do
+      within('#new_comment') do
         fill_in 'Text', with: text
       end
       click_button 'Create Comment'
@@ -31,7 +31,7 @@ describe 'creating comment', type: :feature do
   end
 
   context 'delete comment' do
-    it "deletes well", js: true do
+    it 'deletes well', js: true do
       text = 'My Simple text'
       user.comments << Comment.new(text: text)
       visit '/'
@@ -49,7 +49,7 @@ describe 'creating comment', type: :feature do
       new_text = FFaker::Lorem.characters(256)
       visit '/'
       click_link '✏'
-      within(".edit_comment") do
+      within('.edit_comment') do
         fill_in 'Text', with: new_text
       end
       click_button 'Update Comment'

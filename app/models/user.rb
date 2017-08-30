@@ -4,10 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
-  
   validates :first_name, presence: :true, length: { maximum: 32 }
   validates :last_name,  presence: :true, length: { maximum: 64 }
-
   has_many :comments, dependent: :destroy
   
   def full_name
@@ -18,7 +16,7 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
- 
+
       fullname = auth['info']['name'].split(' ')
       user.first_name = fullname.first
       user.last_name = fullname.last

@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -33,77 +32,67 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Helper for kaminari gem
+gem 'bootstrap-kaminari-views'
 # Authentication
 gem 'devise'
-
-#OAuth Facebook provider
-gem 'omniauth-facebook', '~> 4.0.0'
-gem 'slim-rails'
-gem 'simple_form'
-
-gem 'record_tag_helper', '~> 1.0'
-gem 'local_time'
+# Pagination
 gem 'kaminari'
-gem 'bootstrap-kaminari-views'
+# Time helper fow views
+gem 'local_time'
+# OAuth Facebook provider
+gem 'omniauth-facebook', '~> 4.0.0'
+gem 'record_tag_helper', '~> 1.0'
+gem 'simple_form'
+gem 'slim-rails'
+
 group :development, :test do
-  gem 'dotenv-rails'
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'byebug', platform: :mri
-  gem 'pry-byebug'
-  gem 'pry-stack_explorer'
-  gem 'pry-doc'
   gem 'awesome_print'
-  
+  gem 'byebug', platform: :mri
   gem 'capybara', '~> 2.13'
-  gem 'factory_girl_rails'  
-  gem 'rspec-rails', '~> 3.6'
   gem 'capybara-webkit'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'brakeman', require: false
+  gem 'bullet'
+  gem 'bundler-audit'
+  gem 'flamegraph'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-
+  gem 'rack-mini-profiler', require: false
   ## Linters
   gem 'rubocop', require: false
-  gem 'bullet'
-
-  gem 'bundler-audit'
-  gem 'brakeman', require: false
-
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'stackprof'
-  gem 'flamegraph'
-  gem 'rack-mini-profiler', require: false
 end
 
 group :test do
-  gem 'spring-commands-rspec', '~> 1.0'
-  gem 'guard'
-  gem 'guard-bundler', require: false
-  gem 'guard-brakeman'
-  gem 'guard-rspec'
-  gem 'rb-inotify', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-fchange', require: false
-  gem 'terminal-notifier-guard'
-
-  gem 'simplecov', require: false
-
   gem 'database_cleaner'
-
-  gem 'shoulda-matchers',          '~> 3.1'
-  gem 'shoulda-callback-matchers', '~> 1.1'
-
   gem 'ffaker'
-  gem 'timecop'
+  gem 'guard'
+  gem 'guard-brakeman'
+  gem 'guard-bundler', require: false
+  gem 'guard-rspec'
   gem 'json-schema'
+  gem 'rb-fchange', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
+  gem 'shoulda-callback-matchers', '~> 1.1'
+  gem 'shoulda-matchers',          '~> 3.1'
+  gem 'simplecov', require: false
+  gem 'spring-commands-rspec', '~> 1.0'
+  gem 'terminal-notifier-guard'
+  gem 'timecop'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

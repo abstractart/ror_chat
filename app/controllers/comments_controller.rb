@@ -27,17 +27,18 @@ class CommentsController < ApplicationController
     @comment.update(comment_params)
     respond_with(@comment)
   end
-  
+
   def destroy
     @comment.destroy
     respond_with(@comment)
   end
-  
-  private 
+
+  private
 
   def set_comment
     @comment = current_user.comments.find(params[:id])
   end
+
   def comment_params
     params.require(:comment).permit(:text)
   end

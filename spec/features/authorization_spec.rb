@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "the signin process", type: :feature do
-  it "signs me in" do
-    user = FactoryGirl.create(:user)    
+describe 'the signin process', type: :feature do
+  it 'signs me in' do
+    user = FactoryGirl.create(:user)
     visit '/users/sign_in'
     within("#new_user") do
       fill_in 'Email', with: user.email
@@ -12,10 +12,10 @@ describe "the signin process", type: :feature do
     expect(page).to have_content 'Signed in successfully.'
   end
 
-  it "signup me" do
+  it 'signup me' do
     user = FactoryGirl.build(:user) 
     visit '/users/sign_up'
-    within("#new_user") do
+    within('#new_user') do
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       fill_in 'Password confirmation', with: user.password
