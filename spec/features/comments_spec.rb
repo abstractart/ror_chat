@@ -15,6 +15,11 @@ describe 'Comments', type: :feature do
       visit '/'
       expect(page).to have_css('.comment', count: 1)
     end
+
+    it 'shows only user comments' do
+      visit '/comments'
+      expect(page).to have_css('.comment', count: 1)  
+    end
   end
 
   context 'create comment' do
