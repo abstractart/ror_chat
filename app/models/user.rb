@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :first_name, presence: :true, length: { maximum: 32 }
   validates :last_name,  presence: :true, length: { maximum: 64 }
 
+  has_many :comments, dependent: :destroy
+  
   def full_name
     first_name + " " + last_name
   end
