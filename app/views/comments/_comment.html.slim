@@ -8,3 +8,5 @@
     .panel-body
       = simple_format comment.text
     .panel-footer
+      = local_time_ago(comment.created_at)
+

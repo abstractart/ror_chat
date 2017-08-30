@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery-ujs
-//= require bootstrap/dist/js/bootstrap 
+//= require bootstrap/dist/js/bootstrap
+//= require local-time
 //= require_tree .
