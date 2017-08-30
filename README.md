@@ -1,24 +1,22 @@
-# README
+# RoR Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Задание](https://gist.github.com/fee1good/a58e125ee6b89e466825efbb07737a77)
 
-Things you may want to cover:
+## Функционал
 
-* Ruby version
+### Регистрация
+- Классическая
+- OAuth Facebook
+### Зарегистрированный пользователь может
+- Просмотреть все комментарии (постранично).
+- Просмотреть только свои комментарии (постранично).
+- Редактировать и удалять **свои** комментарии.
+- Отредактировать свой профиль (в том числе удалить его).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Разработка
+### Первичная настройка
+`rvm gemset create ror_chat && bundle install && rake db:setup && yarn`
+### Тесты
+`rspec spec/`
+### Анализаторы кода
+`./linters.sh`
