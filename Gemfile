@@ -73,6 +73,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'stackprof'
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
