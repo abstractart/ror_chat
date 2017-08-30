@@ -54,6 +54,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'ffaker'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-doc'
@@ -80,7 +81,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'ffaker'
   gem 'guard'
   gem 'guard-brakeman'
   gem 'guard-bundler', require: false
