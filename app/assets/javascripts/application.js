@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ujs
+//= require turbolinks
 //= require bootstrap/dist/js/bootstrap
 //= require local-time
 //= require_tree .
