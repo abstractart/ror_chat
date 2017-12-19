@@ -15,8 +15,8 @@
 
 ## Development
 ### Initial
-`rvm gemset create ror_chat && bundle install && rake db:setup && yarn`
+`rvm gemset create ror_chat && bundle && rake db:setup && yarn`
 ### Tests
-`rspec spec/`
+`bundle exec rspec`
 ### Code Analyzers
 `./linters.sh`
